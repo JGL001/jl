@@ -2,16 +2,12 @@
   "private": true,
   "author": "",
   "scripts": {
-    "dev": "umi dev",
     "build": "umi build",
-    "postinstall": "umi setup",
-    "setup": "umi setup",
-    "start": "npm run dev",
+    "start": "umi dev",
     "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,md,json}'",
     "lint:style": "stylelint --fix \"src/**/*.less\" --syntax less",
     "lint:fix": "eslint --fix --cache --ext .js,.jsx,.ts,.tsx --format=pretty ./src && npm run lint:style",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx --format=pretty ./src",
-    "lint-staged": "lint-staged",
     "tsc": "tsc --noEmit"
   },
   "gitHooks": {
@@ -31,7 +27,6 @@
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
     "@umijs/fabric": "^3.0.0",
-    "@umijs/yorkie": "2.0.5",
     "eslint-plugin-prettier": "^4.2.1",
     "lint-staged": "^10.0.7",
     "prettier": "2.3.2",
