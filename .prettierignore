@@ -18,6 +18,7 @@ LICENSE
 .eslintcache
 *.lock
 yarn-error.log
+pnpm-lock.yaml
 .history
 CNAME
 /build

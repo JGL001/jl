@@ -8,3 +8,7 @@ mock
 .eslintrc.js
 typings.d.ts
 nodule_modules
+*.lock
+yarn-error.log
+pnpm-lock.yaml
+.eslintcache
