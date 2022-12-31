@@ -1,7 +1,7 @@
 const routes = [
-    {
-       path: '/' 
-    }
+  {
+    path: '/',
+  },
 ];
 
 export { routes };
