@@ -31,6 +31,7 @@
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
     "@umijs/fabric": "^3.0.0",
+    "@umijs/yorkie": "2.0.5",
     "eslint-plugin-prettier": "^4.2.1",
     "lint-staged": "^10.0.7",
     "prettier": "2.3.2",
