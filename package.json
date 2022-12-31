@@ -10,7 +10,7 @@
     "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,md,json}'",
     "lint:style": "stylelint --fix \"src/**/*.less\" --syntax less",
     "lint:fix": "eslint --fix --cache --ext .js,.jsx,.ts,.tsx --format=pretty ./src && npm run lint:style",
-    "lint": "eslint --cache --ext .js,.jsx,.ts,.tsx --format=pretty ./src",
+    "lint": "eslint --ext .js,.jsx,.ts,.tsx --format=pretty ./src",
     "lint-staged": "lint-staged",
     "tsc": "tsc --noEmit"
   },
