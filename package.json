@@ -1,12 +1,28 @@
 {
   "private": true,
-  "author":"",
+  "author": "",
   "scripts": {
     "dev": "umi dev",
     "build": "umi build",
     "postinstall": "umi setup",
     "setup": "umi setup",
-    "start": "npm run dev"
+    "start": "npm run dev",
+    "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,md,json}'",
+    "lint:style": "stylelint --fix \"src/**/*.less\" --syntax less",
+    "lint:fix": "eslint --fix --cache --ext .js,.jsx,.ts,.tsx --format=pretty ./src && npm run lint:style",
+    "lint-staged:js": "eslint --ext .js,.jsx,.ts,.tsx ",
+    "lint-staged": "lint-staged",
+    "tsc": "tsc --noEmit"
+  },
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "**/*.less": "stylelint --syntax less",
+    "**/*.{js,jsx,ts,tsx}": "npm run lint-staged:js",
+    "**/*.{js,jsx,tsx,ts,less,md,json}": [
+      "prettier --write"
+    ]
   },
   "dependencies": {
     "umi": "^4.0.41"
@@ -14,6 +30,11 @@
   "devDependencies": {
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
-    "typescript": "^4.1.2"
+    "@umijs/fabric": "^3.0.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "lint-staged": "^13.1.0",
+    "prettier": "2.3.2",
+    "typescript": "^4.1.2",
+    "yorkie": "^2.0.0"
   }
 }
