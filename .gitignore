@@ -7,3 +7,6 @@
 /src/.umi-test
 /dist
 .eslintcache
+.vscode
+*.lock
+yarn-error.log
