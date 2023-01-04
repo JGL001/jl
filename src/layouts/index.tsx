@@ -1,21 +1,18 @@
-import { Link, Outlet } from 'umi';
-import styles from './index.less';
+import { Outlet } from 'umi';
+import { ConfigProvider, DatePicker } from 'antd';
+import zhCN from 'antd/es/locale/zh_CN';
+import 'moment/locale/zh-cn';
+import 'antd/dist/antd.css';
 
-export default function Layout() {
+const Layout = () => {
   return (
-    <div className={styles.navs}>
-      <ul>
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-        <li>
-          <Link to="/docs">Docs</Link>
-        </li>
-        <li>
-          <a href="https://github.com/umijs/umi">Github</a>
-        </li>
-      </ul>
+    <ConfigProvider locale={zhCN} componentSize="small">
+      <div>
+        <DatePicker placeholder="请选择日期" />
+      </div>
       <Outlet />
-    </div>
+    </ConfigProvider>
   );
-}
+};
+
+export default Layout;

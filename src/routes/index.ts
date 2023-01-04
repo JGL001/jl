@@ -1,6 +1,7 @@
 const routes = [
   {
     path: '/',
+    componet: '../layouts',
   },
 ];
 

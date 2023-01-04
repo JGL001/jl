@@ -1,9 +1,9 @@
-import { defineConfig } from "umi";
-import { routes } from "./src/routes";
+import { defineConfig } from 'umi';
+import { routes } from './src/routes';
+const AntdDayjsWebpackPlugin = require('antd-dayjs-webpack-plugin');
 
 export default defineConfig({
   base: 'jl',
-  npmClient: 'pnpm',
   alias: {
     '@/components': '/src/components',
     '@/pages': '/src/pages',
@@ -13,7 +13,10 @@ export default defineConfig({
     '@/routes': '/src/routes',
     '@/constant': '/src/constant',
   },
-  analyze: {},
   routes,
+  ignoreMomentLocale: true,
+  chainWebpack: (config, { webpack }) => {
+    console.log({ config, webpack });
+    config.plugin('moment2dayjs').use(AntdDayjsWebpackPlugin, [{ preset: 'antdv4' }]);
+  },
 });
-
