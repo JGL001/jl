@@ -2,8 +2,8 @@
   "private": true,
   "author": "",
   "scripts": {
-    "build": "umi build ANALYZE=1 ",
-    "start": "umi dev",
+    "build": "ANALYZE=1 max build",
+    "start": "max dev",
     "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,md,json}'",
     "lint:style": "stylelint --fix \"src/**/*.less\" --syntax less",
     "lint:fix": "eslint --fix --cache --ext .js,.jsx,.ts,.tsx --format=pretty ./src && npm run lint:style",
@@ -22,7 +22,9 @@
   },
   "dependencies": {
     "@ant-design/icons": "^4.8.0",
-    "antd": "4.24.1"
+    "@umijs/max": "^4.0.42",
+    "antd": "4.24.1",
+    "moment": "^2.29.4"
   },
   "devDependencies": {
     "@types/react": "^18.0.0",

@@ -1,15 +1,18 @@
 import React from 'react';
-import { useDispatch } from 'dva';
+import { history, useDispatch, useSelector } from '@umijs/max';
 import { Form, Input, Checkbox, Button } from 'antd';
 import { IObject } from '@/constant/interface';
 import styles from './index.less';
 
 const Login: React.FC = () => {
     const dispatch = useDispatch();
+    const state = useSelector((s: IObject) => s);
+    console.log({ state });
 
     // 提交操作
     const onFinish = (values: IObject) => {
         console.log({ values });
+        dispatch({ type: 'global/login', payload: values, cb: history.push('/') });
     };
 
     return (

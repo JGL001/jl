@@ -1,21 +1,23 @@
-@import '../themes/dark.less';
-@import '../themes/light.less';
+@import './themes/dark.less';
+@import './themes/light.less';
 
 .df {
   display: flex;
 }
 
-body {
-  background: var(--primary-bg-color);
-  color: var(--primary-text-color);
-  >div {
-    width: 100%;
-    height: 100%;
+html {
+  >body {
+    background: var(--primary-bg-color);
+    color: var(--primary-text-color);
+    >div {
+      width: 100%;
+      height: 100%;
+    }
   }
-}
 
-a {
-  color: var(--primary-text-color);
+  a {
+    color: var(--primary-text-color);
+  }
 }
 
 .active {

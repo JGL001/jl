@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { history } from 'umi';
+import { history } from '@umijs/max';
 import { message } from 'antd';
 import qs from 'qs';
 import type { IObject } from '@/constant/interface';

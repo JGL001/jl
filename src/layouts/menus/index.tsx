@@ -1,13 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { Avatar } from 'antd';
 import { UserOutlined } from '@ant-design/icons';
-import { Link, NavLink } from 'umi';
+import { Link, NavLink, useSelector } from '@umijs/max';
 import { useChangeTheme } from '@/hooks';
 import { navList } from '@/constant/mockData';
 import type { IObject } from '@/constant/interface';
 import styles from './index.less';
 
 const MeunList: React.FC = () => {
+  const { userInfo } = useSelector((state: IObject) => state.global)
   const { setTheme: setThemes } = useChangeTheme();
   const [language, setLanguage] = useState('中文');
   const [theme, setTheme] = useState('暗色');
@@ -39,6 +40,14 @@ const MeunList: React.FC = () => {
     }
   };
 
+  // 当用户登录过后显示用户名
+  const loginNode = useMemo(() => {
+    if (userInfo?.userName) {
+      return <div className='ml8'>{userInfo.userName}</div>;
+    }
+    return <NavLink className='ml8' to="/login">登录</NavLink>;
+  }, [userInfo?.userName])
+
   return (
     <div className={`${styles.nav} df aic jcsb p12`}>
       <Link className={styles.logo} to="/">
@@ -56,9 +65,9 @@ const MeunList: React.FC = () => {
         <div className={`m012 ${styles.checked}`} onClick={changeTheme}>
           {theme}
         </div>
-        <div className='m012'>
+        <div className='m012 df aic'>
           <Avatar size="small" icon={<UserOutlined />} />
-          <div>登录</div>
+          {loginNode}
         </div>
       </div>
     </div>

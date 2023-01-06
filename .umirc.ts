@@ -1,4 +1,4 @@
-import { defineConfig } from 'umi';
+import { defineConfig } from '@umijs/max';
 import { routes } from './src/routes';
 const AntdDayjsWebpackPlugin = require('antd-dayjs-webpack-plugin');
 
@@ -21,4 +21,6 @@ export default defineConfig({
     config.plugin('moment2dayjs').use(AntdDayjsWebpackPlugin, [{ preset: 'antdv4' }]);
   },
   fastRefresh: true,
+  dva: {},
+  mock: {},
 });

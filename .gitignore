@@ -9,4 +9,6 @@
 .eslintcache
 .vscode
 *.lock
+*.yaml
 yarn-error.log
+/mock

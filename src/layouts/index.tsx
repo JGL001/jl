@@ -1,4 +1,4 @@
-import { Outlet, useLocation } from 'umi';
+import { Outlet, useLocation } from '@umijs/max';
 import React, { useEffect, useMemo, Suspense } from 'react';
 import { ConfigProvider } from 'antd';
 import { useChangeTheme } from '@/hooks';
@@ -7,7 +7,6 @@ import Footer from './footer';
 import zhCN from 'antd/es/locale/zh_CN';
 import 'moment/locale/zh-cn';
 import 'antd/dist/antd.css';
-import '@/styles/global.less';
 
 const Layout: React.FC = () => {
   const { initTheme } = useChangeTheme();

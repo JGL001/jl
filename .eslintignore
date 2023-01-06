@@ -12,3 +12,4 @@ nodule_modules
 yarn-error.log
 pnpm-lock.yaml
 .eslintcache
+.umirc.ts

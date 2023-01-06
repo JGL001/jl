@@ -17,8 +17,9 @@ export default {
         },
     },
     effects: {
-        *login({ payload }: any, { call, put }: any) {
-            const loginInfo = yield call(login, payload.params);
+        *login({ payload, cb }: any, { call, put }: any) {
+            console.log({ payload })
+            const loginInfo = yield call(login, payload);
             yield put({
                 type: 'saveUserInfo',
                 payload: {
@@ -29,6 +30,9 @@ export default {
                     }
                 },
             });
+            cb && cb();
+            localStorage.setItem('userToken', loginInfo?.userToken);
+            localStorage.setItem('userId', loginInfo?.userId);
         },
     }
 };
