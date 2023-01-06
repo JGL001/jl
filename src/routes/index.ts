@@ -1,5 +1,9 @@
 const routes = [
   {
+    path: '/login',
+    component: '@/login',
+  },
+  {
     path: '/',
     exact: false,
     routes: [

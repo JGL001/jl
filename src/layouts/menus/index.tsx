@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
+import { Avatar } from 'antd';
+import { UserOutlined } from '@ant-design/icons';
 import { Link, NavLink } from 'umi';
 import { useChangeTheme } from '@/hooks';
-import { navList } from '@/contant/mockData';
-import type { IObject } from '@/contant/interface';
+import { navList } from '@/constant/mockData';
+import type { IObject } from '@/constant/interface';
 import styles from './index.less';
 
 const MeunList: React.FC = () => {
@@ -53,6 +55,10 @@ const MeunList: React.FC = () => {
         </div>
         <div className={`m012 ${styles.checked}`} onClick={changeTheme}>
           {theme}
+        </div>
+        <div className='m012'>
+          <Avatar size="small" icon={<UserOutlined />} />
+          <div>登录</div>
         </div>
       </div>
     </div>

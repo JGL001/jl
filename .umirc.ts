@@ -12,6 +12,8 @@ export default defineConfig({
     '@/themes': '/src/themes',
     '@/routes': '/src/routes',
     '@/constant': '/src/constant',
+    '@/services': '/src/services',
+    '@/hoc': '/src/hoc',
   },
   routes,
   ignoreMomentLocale: true,
