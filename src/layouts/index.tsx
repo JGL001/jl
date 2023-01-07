@@ -6,7 +6,6 @@ import MeunList from './menus';
 import Footer from './footer';
 import zhCN from 'antd/es/locale/zh_CN';
 import 'moment/locale/zh-cn';
-import 'antd/dist/antd.css';
 
 const Layout: React.FC = () => {
   const { initTheme } = useChangeTheme();

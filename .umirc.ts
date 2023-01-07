@@ -23,4 +23,10 @@ export default defineConfig({
   fastRefresh: true,
   dva: {},
   mock: {},
+  lessLoader: {
+    javascriptEnabled: true,
+    modifyVars: {
+      '@ant-prefix': 'jgl',
+    },
+  }
 });
